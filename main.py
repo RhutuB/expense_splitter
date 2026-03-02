@@ -26,7 +26,6 @@ def main():
         show_menu()
         choice = input("Enter choice: ").strip()
 
-        # 1️⃣ Add Expense
         if choice == "1":
             name = input("Enter name: ").strip()
 
@@ -48,7 +47,7 @@ def main():
             expenses[name] = expenses.get(name, 0) + amount
             print(f"{GREEN}Added: {name} paid ₹{amount}{RESET}")
 
-        # 2️⃣ View Expenses
+        
         elif choice == "2":
             if not expenses:
                 print(f"{RED}No expenses added yet.{RESET}")
@@ -57,7 +56,7 @@ def main():
                 for p, amt in expenses.items():
                     print(f"{p}: ₹{amt:.2f}")
 
-        # 3️⃣ Summary
+        
         elif choice == "3":
             if not expenses:
                 print(f"{RED}No expenses added yet.{RESET}")
@@ -73,7 +72,7 @@ def main():
                 color = GREEN if b > 0 else RED if b < 0 else RESET
                 print(f"{color}{p}: {b:.2f}{RESET}")
 
-        # 4️⃣ Settlements
+        
         elif choice == "4":
             if not expenses:
                 print(f"{RED}No expenses added yet.{RESET}")
@@ -89,7 +88,7 @@ def main():
             else:
                 print(f"{GREEN}All settled already.{RESET}")
 
-        # 5️⃣ Export
+        
         elif choice == "5":
             if not last_settlements:
                 print(f"{RED}Run settlements first (option 4).{RESET}")
@@ -101,7 +100,7 @@ def main():
 
             print(f"{GREEN}Saved to settlements.txt{RESET}")
 
-        # 6️⃣ Exit
+       
         elif choice == "6":
             print("Goodbye!")
             break
@@ -112,3 +111,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
